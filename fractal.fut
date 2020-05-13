@@ -17,7 +17,7 @@ let c_zero: complex = { re = 0, im = 0 }
 module mandelbrot = {
   let f (c: complex) (z: complex): complex = c_plus (c_square z) c
 
-  let max_iterations: i32 = 1000
+  let max_iterations: i32 = 500
   let converges (c: complex): bool =
     c_magnitude (loop (i, z) = (0, c_zero)
 		 while i < max_iterations && c_magnitude z < 2
@@ -41,4 +41,4 @@ module mandelbrot = {
 	     (0..<h) :> [h][w]bool
 }
 
-let main: [2048][2048]bool = mandelbrot.boolmap 2048 2048
+let main (h: i32) (w: i32): [h][w]bool = mandelbrot.boolmap h w
