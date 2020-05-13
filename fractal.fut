@@ -1,5 +1,3 @@
-type rgb = { r: f32, g: f32, b: f32 }
-
 type complex = { re: f32, im: f32 }
 
 let c_plus (a: complex) (b: complex): complex
